@@ -1,0 +1,14 @@
+<html>
+	<html xmlns="http://www.w3.org/1999/xhtml"xmlns:th="http://www.thymeleaf.org">
+	<body>
+		サンプル画面
+		<h2 th:text="${message}"></h2>
+		
+		
+		<form action="/weather"method="post" >
+			<input type="text" name="areaCode"/>
+			<button type="submit">送信</button>
+			
+		</form>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ユーザー更新</title>
+</head>
+
+<body>
+
+    <form action="/user/update" method="post" th:object="${user}">
+        <label for="name">名前:</label>
+        <input id="name" type="text" name="name" th:field="*{name}" />
+	
+			<input id="id" type="hidden" name="id" th:field="*{id}" />
+			<input id="id" type="hidden" name="createDate" th:field="*{createDate}" />
+        <!-- 他のフィールドがある場合はここに追加 -->
+        
+        <button type="submit">更新</button>
+    </form>
+
+</body>
+
+</html>
