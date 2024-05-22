@@ -70,6 +70,13 @@ public class UserController {
 
 	}
 	
+	@GetMapping("/user/search")
+	public String searchPerson(@RequestParam("keyword") String keyword, Model model) {
+		List<User> userlist = userService.searchUser(keyword);
+		model.addAttribute("userlist", userlist);
+		return "/user/list";
+	}
+	
 	
 
 }

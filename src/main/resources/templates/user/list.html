@@ -10,6 +10,12 @@
 
 <body>
 	<h1>ユーザー情報一覧</h1>
+
+	<form action="/user/search" method="get">
+		<input type="text" name="keyword" />
+		<button type="submit">検索</button>
+		<button type="button" onclick="window.location.href='/user/list'">りせっと</button>
+	</form>
 	<table>
 		<thead>
 			<tr>
@@ -18,7 +24,7 @@
 
 				<th>更新日時</th>
 				<th>登録日時</th>
-				
+
 			</tr>
 		</thead>
 		<tbody>
@@ -28,8 +34,8 @@
 				<td th:text="*{name}"></td>
 
 
-		
-<!--				<td class="center" th:text="${#dates.format(user.createDate, 'yyyy/MM/dd')}"></td>-->
+
+				<!--				<td class="center" th:text="${#dates.format(user.createDate, 'yyyy/MM/dd')}"></td>-->
 				<td class="center" th:text="${user.updateDate}"></td>
 				<td class="center" th:text="${user.createDate}"></td>
 				<td><a th:href="@{/user/delete/{id}(id=${user.id})}">削除</a></td>

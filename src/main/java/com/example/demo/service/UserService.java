@@ -23,6 +23,10 @@ private	UserRepository userRepository;
 		return userRepository.findAll();
 	}
 	
+	public List<User> searchUser(String keyword){
+		return userRepository.findByNameContaining(keyword);
+	}
+	
 	public User findUser(Long id) {
 		return userRepository.getReferenceById(id);
 	}
@@ -47,5 +51,7 @@ private	UserRepository userRepository;
 	        userRepository.save(user);
 	        return "redirect:/user/list";
 	}
+	
+	
 
 }
